@@ -26,6 +26,6 @@
   },
   "files": [
     "dist",
-    "src"
+    "api"
   ]
 }

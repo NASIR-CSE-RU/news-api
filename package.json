@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "build": "echo 'nothing to build'",
-    "start": "PORT=8080 node index.js"
+    "start": "node index.js"
   },
   "author": "Nasir Wahid",
   "license": "ISC",

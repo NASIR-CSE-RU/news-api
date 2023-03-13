@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 app.use(bodyParser.json());
 // app.use('/api/v1',routers)
 app.get('/',(req,res)=>{
-res.send('hellow from home page');
+res.send('<h1>hellow from home page</h1>');
 });
 app.listen(PORT,()=>console.log(`Server is running on port: http://localhost:${PORT}`));
 // mongoose.connect(process.env.DB_CONNECTION)

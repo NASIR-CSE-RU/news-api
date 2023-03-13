@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "build": "babel api -d dist",
-    "start": "node dist/index.js"
+    "build": "echo 'do nothing'",
+    "start": "node index.js"
   },
   "author": "Nasir Wahid",
   "license": "ISC",

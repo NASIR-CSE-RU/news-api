@@ -11,7 +11,7 @@ export const create = async (req,res) =>{
     if(!note){
         return res.status(404).json({message:"Note cannot be saved !!"})
     }
-    res.status(200).json({success:true,message:"Note saved successfully.",data:note});
+    res.send({success:true,message:"Note saved successfully.",data:note});
 }catch(error){
     console.log(error);
     res.status(500).json({message:"Something error occured"});
@@ -21,7 +21,8 @@ export const create = async (req,res) =>{
 export const all = async (req,res) =>{
     try{
         const notes= await noteModel.find({});
-        res.status(200).json({success:true,message:`${notes.length} notes found!`,data:notes})
+        let response={success:true,message:`${notes.length} notes found!`,data:notes}
+        res.send(response);
     }catch(error){
         console.log(error);
         res.status(500).json({message:"something wrong!!"})

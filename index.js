@@ -6,8 +6,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const app = express();
-// const PORT = process.env.PORT;
- const PORT =8080;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 // app.use('/api/v1',routers)

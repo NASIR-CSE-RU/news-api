@@ -6,17 +6,19 @@ import routers from './api/routes/index.js'
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
+ const PORT =8080;
+
 app.use(bodyParser.json());
-app.use('/api/v1',routers)
+// app.use('/api/v1',routers)
 app.get('/',(req,res)=>{
 res.send('hellow from home page');
 });
-
-mongoose.connect(process.env.DB_CONNECTION)
-.then(()=>{
-    app.listen(PORT,()=>console.log(`Server is running on port: http://localhost:${PORT}`));
-})
-.catch((error)=>{
-    console.log(error)
-})
+app.listen(PORT,()=>console.log(`Server is running on port: http://localhost:${PORT}`));
+// mongoose.connect(process.env.DB_CONNECTION)
+// .then(()=>{
+//     app.listen(PORT,()=>console.log(`Server is running on port: http://localhost:${PORT}`));
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })

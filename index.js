@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import routers from './api/routes/index.js'
+// import mongoose from 'mongoose';
+// import routers from './api/routes/index.js'
 
 dotenv.config();
 const app = express();

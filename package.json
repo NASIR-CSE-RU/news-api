@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon index.js",
     "build": "echo 'nothing to build'",
-    "start": "node src/index.js"
+    "start": "PORT=8080 node index.js"
   },
   "author": "Nasir Wahid",
   "license": "ISC",

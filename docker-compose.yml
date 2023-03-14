@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    environment:
+      - MONGO_URI=mongodb+srv://admin:uzzal.cse@node-api.0jxhkri.mongodb.net/?retryWrites=true&w=majority
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"

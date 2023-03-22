@@ -45,7 +45,7 @@ export const signin = async (req,res) =>{
 
     }catch(error){
         console.log(error);
-        res.sendResponse(500,"something went wrong !!")
+        res.sendResponse(500,"something went wrong !!",error)
     }
 
 }

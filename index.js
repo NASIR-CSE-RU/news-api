@@ -4,9 +4,13 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors'
 import routers from './api/routes/index.js'
+import sendResponse from "./api/middlewares/response.js";
+import errorHandler from "./api/middlewares/errorHandler.js";
 
 dotenv.config();
 const app = express();
+app.use(sendResponse);
+app.use(errorHandler);
 app.use(cors());
 const PORT = process.env.PORT;
 app.use(bodyParser.json());

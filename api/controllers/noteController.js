@@ -1,5 +1,5 @@
 import noteModel from '../models/note.js'
-
+// app.use(sendResponse);
 export const create = async (req,res) =>{
     const {title,description}=req.body;
     try{
@@ -9,12 +9,12 @@ export const create = async (req,res) =>{
         userId:req.userId
     });
     if(!note){
-        return res.status(404).json({message:"Note cannot be saved !!"})
+        return res.sendResponse(404,"Note cannot be saved !!",null)
     }
-    res.send({success:true,message:"Note saved successfully.",data:note});
+    res.sendResponse(200,"Note saved successfully.",note);
 }catch(error){
     console.log(error);
-    res.status(500).json({message:"Something error occured"});
+    res.sendResponse(500,"Something error occured");
 }
 } 
 
@@ -22,10 +22,10 @@ export const all = async (req,res) =>{
     try{
         const notes= await noteModel.find({});
         let response={success:true,message:`${notes.length} notes found!`,data:notes}
-        res.send(response);
+        res.sendResponse(200,`${notes.length} notes found!`,notes);
     }catch(error){
         console.log(error);
-        res.status(500).json({message:"something wrong!!"})
+        res.sendResponse(500,error.message)
     }
 }
 

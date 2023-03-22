@@ -41,7 +41,7 @@ export const signin = async (req,res) =>{
            return res.sendResponse(404,"credential does not matched !!")
         }
         const token = jwt.sign({email:existUser.email,id:existUser._id},SECRET_KEY);
-        res.sendResponse(201,'login success',{user:existUser,token:token})
+        res.sendResponse(200,'login success',{user:existUser,token:token})
 
     }catch(error){
         console.log(error);
